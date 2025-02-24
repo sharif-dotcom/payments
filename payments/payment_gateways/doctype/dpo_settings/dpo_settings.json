@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-24 10:22:22.617618",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company_token",
+  "dpo_url",
+  "redirect_url",
+  "column_break_vksn",
+  "back_url",
+  "service_id",
+  "payment_currency",
+  "enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_token",
+   "fieldtype": "Data",
+   "label": "Company Token"
+  },
+  {
+   "fieldname": "dpo_url",
+   "fieldtype": "Data",
+   "label": "DPO Url"
+  },
+  {
+   "fieldname": "redirect_url",
+   "fieldtype": "Data",
+   "label": "Redirect URL"
+  },
+  {
+   "fieldname": "column_break_vksn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "back_url",
+   "fieldtype": "Data",
+   "label": "Back URL"
+  },
+  {
+   "fieldname": "service_id",
+   "fieldtype": "Data",
+   "label": "Service ID"
+  },
+  {
+   "fieldname": "payment_currency",
+   "fieldtype": "Link",
+   "label": "Payment Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-24 10:24:42.053000",
+ "modified_by": "Administrator",
+ "module": "Payment Gateways",
+ "name": "DPO Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
