@@ -11,13 +11,14 @@ import requests
 class DPOSettings(Document):
     def validate(self):
         """Ensure all required credentials are set."""
-        required_fields = ["company_token", "service_id", "dpo_url", "payment_currency", "back_url"]
+        required_fields = ["company_token", "service_id", "dpo_url", "payment_currency", "back_url", "redirect_url"]
         missing_fields = [field for field in required_fields if not self.get(field)]
         if missing_fields:
             frappe.throw(_("Missing required fields: {0}".format(", ".join(missing_fields))))
         
         self.validate_currency(self.payment_currency)
         self.validate_url(self.dpo_url)
+        self.validate_url(self.redirect_url)
 
     def validate_url(self, url):
         """Check if the provided URL is reachable."""
@@ -52,7 +53,7 @@ class DPOSettings(Document):
                 <PaymentAmount>{payment_details['amount']}</PaymentAmount>
                 <PaymentCurrency>{payment_details['currency']}</PaymentCurrency>
                 <CompanyRef>{payment_details['payment']}</CompanyRef>  <!-- Payment reference ID -->
-                <RedirectURL>{payment_details['redirect_to']}</RedirectURL>
+                <RedirectURL>{self.redirect_url}</RedirectURL>
                 <BackURL>{self.back_url}</BackURL>
                 <CompanyRefUnique>0</CompanyRefUnique>
                 <PTL>5</PTL>  <!-- Payment Time Limit in minutes -->
