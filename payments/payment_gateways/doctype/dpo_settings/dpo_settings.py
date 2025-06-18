@@ -30,7 +30,7 @@ class DPOSettings(Document):
 
     def validate_currency(self, currency):
         """Ensure the given currency is supported."""
-        supported_currencies = ['USD', 'EUR', 'GBP', 'ZAR', 'KES']
+        supported_currencies = ['USD', 'EUR', 'GBP', 'ZAR', 'KES', 'UGX']
         if currency not in supported_currencies:
             frappe.throw(_("Currency '{0}' is not supported. Supported currencies: {1}".format(currency, ", ".join(supported_currencies))))
 
